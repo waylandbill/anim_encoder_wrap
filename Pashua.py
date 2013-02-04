@@ -114,6 +114,7 @@ You can use and /or modify this module any way you like.
 This software comes with NO WARRANTY of any kind.
 
 """
+import os
 import os.path
 import sys
 import tempfile
