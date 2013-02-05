@@ -30,13 +30,6 @@ txt.y = 44
 b.type = defaultbutton
 b.label = Stop Capture
 
-# Add a filesystem browser
-ob.type = openbrowser
-ob.label = Capture Directory
-ob.filetype = directory
-ob.width=310
-ob.tooltip = Capture Directory
-
 """
 
 # Set the images' paths relative to this file's path / 

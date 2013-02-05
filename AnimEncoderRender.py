@@ -17,10 +17,10 @@ conf = """
 *.transparency=0.95
 
 # Set window title
-*.title = Capture Dialog
+*.title = Render Output Dialog
 
 b.type = defaultbutton
-b.label = Stop Capture
+b.label = Begin Render
 
 ob.type = savebrowser
 ob.label = Output Filename

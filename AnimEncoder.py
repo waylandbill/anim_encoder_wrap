@@ -4,7 +4,6 @@ import subprocess
 
 import os
 import os.path
-from anim_encoder import capture, anim_encoder
 
 directory = None
 s = subprocess.Popen(['./AnimEncoderCapture.py'], stdout=subprocess.PIPE)
@@ -16,7 +15,7 @@ while True:
         continue
     directory = line.replace('\n','').replace('ob = ', '').encode('utf-8')
 
-proc = subprocess.Popen([u'python', u'anim_encoder/capture.py', 'directory'], shell=True, close_fds=True)
+proc = subprocess.Popen([u'python', u'anim_encoder/capture.py', directory], close_fds=True)
 
 s = subprocess.Popen(['./AnimEncoderStop.py'], stdout=subprocess.PIPE)
 while True:
@@ -35,3 +34,11 @@ while True:
         continue
     filename = line.replace('\n','').replace('ob = ', '').encode('utf-8')
 
+s = subprocess.Popen([u'anim_encoder/anim_encoder.py', filename], shell=True, close_fds=True)
+while True:
+    line = s.stdout.readline()
+    if not line:
+        break
+    if not 'ob = ' in line:
+        continue
+    filename = line.replace('\n','').replace('ob = ', '').encode('utf-8')
