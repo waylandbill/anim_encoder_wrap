@@ -19,11 +19,23 @@ conf = """
 # Set window title
 *.title = Capture Dialog
 
+# Introductory text
+txt.type = text
+txt.default = Capture Running...
+txt.height = 276
+txt.width = 310
+txt.x = 0
+txt.y = 44
+
 b.type = defaultbutton
 b.label = Stop Capture
 
-ob.type = savebrowser
-ob.label = Output Filename
+# Add a filesystem browser
+ob.type = openbrowser
+ob.label = Capture Directory
+ob.filetype = directory
+ob.width=310
+ob.tooltip = Capture Directory
 
 """
 
